@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Creation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:darkgray;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color:antiquewhite;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    input[type="text"], input[type="number"], select {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color:coral;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Create Your Profile</h2>
+    <form id="profileForm">
+      <label for="name"><b>Name:</b></label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="sportsInterests"><b>Sports Interests:</b></label>
+      <input type="text" id="sportsInterests" name="sportsInterests" required>
+
+      <label for="skillLevel"><b>Skill Level:</b></label>
+      <select id="skillLevel" name="skillLevel" required>
+        <i>
+        <option value="Beginner"><i>Beginner</i></option>
+        <option value="Intermediate"><i>Intermediate</i></option>
+        <option value="Advanced"><i>Advanced</i></option>
+        </i>
+      </select>
+
+      <label for="sportsActivities"><b>Preferred Sports Activities:</b></label>
+      <input type="text" id="sportsActivities" name="sportsActivities" required>
+
+      <label for="location"><b>Location:</b></label>
+      <input type="text" id="location" name="location" required>
+
+      <input type="submit" value="Create Profile">
+    </form>
+  </div>
+</body>
+</html>

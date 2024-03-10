@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <div style="margin-top: 50px" align="center">
+      <h2 style="color:darkmagenta; font-family: fantasy;"><b>Are you a sports lover? Here is the Sports Lovers Connect</b></h2> 
+      <p style="color:rgb(30, 11, 49)"><i><b>Come let's register!!!!</b></i></p>
+  </div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:darkgray;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color:antiquewhite;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h3 {
+      text-align:center;
+      color:crimson;
+      margin-bottom: 20px;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 10px;
+    }
+    input[type="text"], input[type="tel"], input[type="password"], input[type="checkbox"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color:coral;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <h3 align="center" ><b>User Registration</b></h3>
+    <form id="registrationForm" onsubmit="return validateForm()" action="login.html">
+
+      <label for="firstname"><b>First Name:</b></label>
+      <input type="text" id="firstname" name="firstname">
+      <div id="firstnameError" class="error"></div>
+
+      <label for="lastname"><b>Last Name:</b></label>
+      <input type="text" id="lastname" name="lastname">
+      <div id="lastnameError" class="error"></div>
+
+      <label for="email"><b>Email:</b></label>
+      <input type="text" id="email" name="email" required>
+      <div id="emailError" class="error"></div>
+
+      <label for="phone"><b>Phone Number:</b></label>
+      <input type="tel" id="phone" name="phone" required>
+      <div id="phoneError" class="error"></div>
+
+      <label for="username"><b>User Name:</b></label>
+      <input type="text" id="username" name="username" required>
+      <div id="usernameError" class="error"></div>
+
+      <label for="password"><b>Password:</b></label>
+      <input type="password" id="password" name="password" required>
+      <div id="passwordError" class="error"></div>
+
+      <label for="confirmPassword"><b>Confirm Password:</b></label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+      <div id="confirmPasswordError" class="error"></div>
+    
+
+      <br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      var firstname = document.getElementById('firstname').value;
+      var lastname = document.getElementById('lastname').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var confirmCheckbox = document.getElementById('confirmCheckbox').checked;
+      
+      var firstnameError = document.getElementById('firstnameError');
+      var lastnameError = document.getElementById('lastnameError');
+      var emailError = document.getElementById('emailError');
+      var phoneError = document.getElementById('phoneError');
+      var usernameError = document.getElementById('usernameError');
+      var passwordError = document.getElementById('passwordError');
+      var confirmPasswordError = document.getElementById('confirmPasswordError');
+
+      // Reset errors
+      firstnameError.textContent = '';
+      lastnameError.textContent = '';
+      emailError.textContent = '';
+      phoneError.textContent = '';
+      usernameError.textContent = '';
+      passwordError.textContent = '';
+      confirmPasswordError.textContent = '';
+
+      // Validate first name
+      if (!firstname) {
+        firstnameError.textContent = 'First name is required';
+        return false;
+      }
+
+      // Validate last name
+      if (!lastname) {
+        lastnameError.textContent = 'Last name is required';
+        return false;
+      }
+
+      // Validate email
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        emailError.textContent = 'Invalid email address';
+        return false;
+      }
+
+      // Validate phone number
+      var phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phone)) {
+        phoneError.textContent = 'Invalid phone number (10 digits)';
+        return false;
+      }
+
+      // Validate username
+      if (!username) {
+        usernameError.textContent = 'Username is required';
+        return false;
+      }
+
+      // Validate password
+      if (!password) {
+        passwordError.textContent = 'Password is required';
+        return false;
+      }
+
+      // Validate confirm password
+      if (password !== confirmPassword) {
+        confirmPasswordError.textContent = 'Passwords do not match';
+        return false;
+      }
+      window.location.href = 'login.html';
+      return true;
+    }
+  </script>
+</body>
+</html>

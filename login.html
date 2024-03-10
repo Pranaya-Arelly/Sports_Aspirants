@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Enthusiast App - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color:darkgray; /* Light grey background color for the body */
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      background-color:antiquewhite; /* Orange background color for the container */
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%; /* Set the width to 100% */
+      background-color:coral;
+      color: #fdfaf7;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff8102;
+    }
+    .forgot-password {
+      margin-top: 10px;
+      text-align:right;
+      font-size: 14px;
+      padding-left:285px;
+      color:blue; /* Grey color for the link */
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      color: #444; /* Darker grey color on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="loginForm">
+      <h2 style="font-family: fantasy; color: crimson;">LOGIN</h2>
+      <label for="email"><b>Email:</b></label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password"><b>Password:</b></label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="login()">Login</button>
+      <a href="#" class="forgot-password" onclick="forgotPassword()">Forgot Password?</a>
+    </form>
+  </div>
+<script>
+ function login() {
+      // Your login logic here
+      console.log("Login button clicked");
+      window.location.href = '\home.html';
+    }
+
+    function forgotPassword() {
+      // Simulate sending OTP to the registered email
+      var email = document.getElementById('email').value;
+      if (!email) {
+        alert("Please enter your email address to reset your password.");
+        return;
+      }
+      alert("An OTP has been sent to your email. Please check your inbox.");
+    }
+</script>
+</body>
+</html>

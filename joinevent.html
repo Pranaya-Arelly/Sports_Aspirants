@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .subcontainer {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 10px;
+      display: inline-block; /* Added to make labels and radio buttons inline */
+    }
+    input[type="text"],
+    input[type="email"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+      vertical-align: middle; /* Added to align radio buttons with labels */
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="subcontainer">
+    <h2>Event Registration</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label>Participant Type:</label>
+      <input type="radio" id="spectator" name="participantType" value="Spectator">
+      <label for="spectator">Spectator</label><br>
+
+      <input type="radio" id="player" name="participantType" value="Player">
+      <label for="player">Player</label>
+
+      <br>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const participantType = document.querySelector('input[name="participantType"]:checked');
+
+      // Validate data (you can add more validation if needed)
+
+      // Display confirmation message (you can replace this with your logic)
+      alert(`Registration successful!\nName: ${name}\nEmail: ${email}\nParticipant Type: ${participantType.value}`);
+
+      // Redirect to a confirmation page or perform other actions as needed
+      window.location.href = 'confirmation.html';
+
+      return false; // Prevent form submission for demo purposes
+    }
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:darkgray;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color:rgb(255, 255, 255);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .subcontainer {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color:rgb(188, 188, 188);
+      border: 1px solid #3f3939;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .event {
+      background-color: #f9f9f9;
+    }
+
+    .event button {
+      background-color:rgb(245, 160, 82);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff8102;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Sports Events in Your Area</h2>
+
+    <!-- Event 1 -->
+    <div class="subcontainer event">
+      <h3>Football Tournament</h3>
+      <p><strong>Date:</strong> March 20, 2024</p>
+      <p><strong>Location:</strong> XYZ Stadium</p>
+      <p><strong>Description:</strong> Join our annual football tournament. Show your skills on the field!</p>
+      <button onclick="redirectToRegistration('football')">Join Event</button>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="subcontainer event">
+      <h3>Running Marathon</h3>
+      <p><strong>Date:</strong> April 5, 2024</p>
+      <p><strong>Location:</strong> City Park</p>
+      <p><strong>Description:</strong> Lace up your running shoes and participate in the marathon. Let's run for a cause!</p>
+      <button onclick="redirectToRegistration('marathon')">Join Event</button>
+    </div>
+
+    <!-- Add more events as needed -->
+
+  </div>
+
+  <script>
+    // Function to redirect to event registration page
+    function redirectToRegistration(eventType) {
+      // You can customize the URL or use a routing library for more complex setups
+      window.location.href = '\joinevent.html?type= ' + eventType;
+    }
+  </script>
+</body>
+
+</html>
